@@ -1,0 +1,143 @@
+{
+  "version": "36.0.0",
+  "artifacts": {
+    "loan-stack.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "loan-stack.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "loan-stack": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "loan-stack.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3f9a8050b47aa376867e9952391451aae9cb96599c129cae384d84933582b4db.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "loan-stack.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "loan-stack.assets"
+      ],
+      "metadata": {
+        "/loan-stack/Function/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "FunctionServiceRole675BB04A"
+          }
+        ],
+        "/loan-stack/Function/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Function76856677"
+          }
+        ],
+        "/loan-stack/Api/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiF70053CD"
+          }
+        ],
+        "/loan-stack/Api/CloudWatchRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiCloudWatchRole73EC6FC4"
+          }
+        ],
+        "/loan-stack/Api/Account": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiAccountA18C9B29"
+          }
+        ],
+        "/loan-stack/Api/Deployment/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiDeploymentB17BE62D4d59b6bef37de2a21439ce69cbe34409"
+          }
+        ],
+        "/loan-stack/Api/DeploymentStage.prod/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiDeploymentStageprod3EB9684E"
+          }
+        ],
+        "/loan-stack/Api/Endpoint": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiEndpoint4F160690"
+          }
+        ],
+        "/loan-stack/Api/Default/{proxy+}/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "Apiproxy05443892"
+          }
+        ],
+        "/loan-stack/Api/Default/{proxy+}/GET/ApiPermission.loanstackApi0D8DB738.GET..{proxy+}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiproxyGETApiPermissionloanstackApi0D8DB738GETproxyAE767FC4"
+          }
+        ],
+        "/loan-stack/Api/Default/{proxy+}/GET/ApiPermission.Test.loanstackApi0D8DB738.GET..{proxy+}": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiproxyGETApiPermissionTestloanstackApi0D8DB738GETproxy37708956"
+          }
+        ],
+        "/loan-stack/Api/Default/{proxy+}/GET/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ApiproxyGET94D86128"
+          }
+        ],
+        "/loan-stack/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/loan-stack/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/loan-stack/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/loan-stack/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "loan-stack"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}
